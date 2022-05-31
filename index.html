@@ -13,7 +13,9 @@
             <li><a id="direct-link" href="spme://callback?code=123">SPME DIRECT LINK</a></li>
             <li><a id="direct-js" href="#" onclick="spmeRedirect()">SPME DIRECT JS</a></li>
             <li><a id="direct-js-delayed" href="#" onclick="spmeDelayedRedirect()">SPME DIRECT JS DELAYED</a></li>
-        </ul>   
+        </ul>
+        <div id="msg">
+        </div>   
     </body>
 
     <script>
@@ -25,6 +27,7 @@
         }
 
         function spmeDelayedRedirect() {
+            document.getElementById("msg", "Waiting before redirect");
             setTimeout(spmeRedirect, delay);
         }
     </script>
