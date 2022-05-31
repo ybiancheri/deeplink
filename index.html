@@ -10,7 +10,22 @@
     </head>
     <body>
         <ul>
-            <li><a href="spme://callback?code=123">SPME DIRECT</a></li>
+            <li><a id="direct-link" href="spme://callback?code=123">SPME DIRECT LINK</a></li>
+            <li><a id="direct-js" onclick="spmeRedirect()">SPME DIRECT JS</a></li>
+            <li><a id="direct-js-delayed" onclick="spmeDelayedRedirect()">SPME DIRECT JS DELAYED</a></li>
         </ul>   
     </body>
+
+    <script>
+        var url = "spme://callback?code=123";
+        var delay = 5000;
+
+        function spmeRedirect() {
+            window.location = url;
+        }
+
+        function spmeDelayedRedirect() {
+            setTimeout(spmeRedirect, delay);
+        }
+    </script>
 </html>
