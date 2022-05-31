@@ -9,13 +9,20 @@
         <meta http-equiv="Expires" content="0" />
     </head>
     <body>
+        <h2>SPME</h2>
         <ul>
             <li><a id="direct-link" href="spme://callback?code=123">SPME DIRECT LINK</a></li>
             <li><a id="direct-js" href="#" onclick="spmeRedirect()">SPME DIRECT JS</a></li>
             <li><a id="direct-js-delayed" href="#" onclick="spmeDelayedRedirect()">SPME DIRECT JS DELAYED</a></li>
         </ul>
         <div id="msg">
-        </div>   
+        </div>
+        <h2>GOOGLE</h2>
+        <ul>
+            <li><a id="direct-link" href="https://www.google.com">GOOGLE DIRECT LINK</a></li>
+            <li><a id="direct-js" href="#" onclick="googleRedirect()">GOOGLE DIRECT JS</a></li>
+            <li><a id="direct-js-delayed" href="#" onclick="googleDelayedRedirect()">GOOGLE DIRECT JS DELAYED</a></li>
+        </ul>
     </body>
 
     <script>
@@ -23,12 +30,25 @@
         var delay = 5000;
 
         function spmeRedirect() {
+            console.log('spmeRedirect');
             window.location = url;
         }
 
         function spmeDelayedRedirect() {
+            console.log('spmeDelayedRedirect');
             document.getElementById("msg", "Waiting before redirect");
             setTimeout(spmeRedirect, delay);
+        }
+
+        function googleRedirect() {
+            console.log('googleRedirect');
+            window.location = "https://www.google.com";
+        }
+
+        function googleDelayedRedirect() {
+            console.log('googleDelayedRedirect');
+            document.getElementById("msg", "Waiting before redirect");
+            setTimeout(googleRedirect, delay);
         }
     </script>
 </html>
