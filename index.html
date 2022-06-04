@@ -60,7 +60,7 @@
         function appAuthRedirect() {
             // https://ybiancheri.github.io/deeplink/index.html?state=xxx&session_state=yyy&code=zzz
             // should generate redirect to testgouv://callback?state=xxx&session_state=yyy&code=zzz
-            window.location = "testgouv://callback?" + window.location.search;
+            window.location = "testgouv://callback" + window.location.search;
         }
         
 
