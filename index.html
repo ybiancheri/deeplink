@@ -9,6 +9,12 @@
         <meta http-equiv="Expires" content="0" />
     </head>
     <body>
+        <h2>AppAuthTest</h2>
+        <ul>
+            <li><a href="#" onclick="appAuthRedirect()">APPAUTH REDIRECT JS</a></li>
+        </ul>
+
+
         <h2>SPME</h2>
         <ul>
             <li><a id="direct-link" href="testgouv://callback?code=123">SPME DIRECT LINK</a></li>
@@ -50,8 +56,13 @@
             document.getElementById("msg", "Waiting before redirect");
             setTimeout(googleRedirect, delay);
         }
+
+        function appAuthRedirect() {
+            // https://ybiancheri.github.io/deeplink/index.html?state=xxx&session_state=yyy&code=zzz
+            // should generate redirect to testgouv://callback?state=xxx&session_state=yyy&code=zzz
+            window.location = "testgouv://callback?" + window.location.search;
+        }
         
-        // https://ybiancheri.github.io/deeplink/index.html?state=xxx&session_state=yyy&code=zzz
-        // should generate redirect to testgouv://callback?state=xxx&session_state=yyy&code=zzz
+
     </script>
 </html>
