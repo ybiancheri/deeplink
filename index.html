@@ -11,7 +11,7 @@
     <body>
         <h2>SPME</h2>
         <ul>
-            <li><a id="direct-link" href="spme://callback?code=123">SPME DIRECT LINK</a></li>
+            <li><a id="direct-link" href="testgouv://callback?code=123">SPME DIRECT LINK</a></li>
             <li><a id="direct-js" href="#" onclick="spmeRedirect()">SPME DIRECT JS</a></li>
             <li><a id="direct-js-delayed" href="#" onclick="spmeDelayedRedirect()">SPME DIRECT JS DELAYED</a></li>
         </ul>
@@ -26,7 +26,7 @@
     </body>
 
     <script>
-        var url = "spme://callback?code=123";
+        var url = "testgouv://callback?code=123";
         var delay = 5000;
 
         function spmeRedirect() {
@@ -50,5 +50,8 @@
             document.getElementById("msg", "Waiting before redirect");
             setTimeout(googleRedirect, delay);
         }
+        
+        // https://ybiancheri.github.io/deeplink/index.html?state=xxx&session_state=yyy&code=zzz
+        // should generate redirect to testgouv://callback?state=xxx&session_state=yyy&code=zzz
     </script>
 </html>
