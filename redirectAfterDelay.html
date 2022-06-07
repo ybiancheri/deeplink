@@ -14,7 +14,6 @@
             <li><a href="#" onclick="appAuthRedirect()">APPAUTH REDIRECT JS</a></li>
         </ul>
         <div id="msg">
-            Redirection
         </div>
     </body>
 
@@ -29,16 +28,13 @@
         }
 
         window.onload = function() {
-            document.getElementById("msg").textContent = 'Redirection dans 5 secondes ' + "testoidc://callback" + window.location.search;
+            document.getElementById("msg").textContent = 'Redirection dans 5 secondes vers' + "testoidc://callback" + window.location.search;
             setTimeout(appAuthRedirect, delay);
         }
 
         function displayMessage() {
-            document.getElementById("msg").textContent = 'La redirection a du être faite vers ' + "testoidc://callback" + window.location.search;
+            document.getElementById("msg").textContent = 'Redirection vers ' + "testoidc://callback" + window.location.search;
         }
 
-        window.onload = function() {
-            setTimeout(appAuthRedirect, delay);
-        }
     </script>
 </html>
