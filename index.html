@@ -9,60 +9,10 @@
         <meta http-equiv="Expires" content="0" />
     </head>
     <body>
-        <h2>AppAuthTest</h2>
+        <h2>Test OIDC Deeplink</h2>
         <ul>
-            <li><a href="#" onclick="appAuthRedirect()">APPAUTH REDIRECT JS</a></li>
-        </ul>
-
-
-        <h2>SPME</h2>
-        <ul>
-            <li><a id="direct-link" href="testoidc://callback?code=123">SPME DIRECT LINK</a></li>
-            <li><a id="direct-js" href="#" onclick="spmeRedirect()">SPME DIRECT JS</a></li>
-            <li><a id="direct-js-delayed" href="#" onclick="spmeDelayedRedirect()">SPME DIRECT JS DELAYED</a></li>
-        </ul>
-        <div id="msg">
-        </div>
-        <h2>GOOGLE</h2>
-        <ul>
-            <li><a id="direct-link" href="https://www.google.com">GOOGLE DIRECT LINK</a></li>
-            <li><a id="direct-js" href="#" onclick="googleRedirect()">GOOGLE DIRECT JS</a></li>
-            <li><a id="direct-js-delayed" href="#" onclick="googleDelayedRedirect()">GOOGLE DIRECT JS DELAYED</a></li>
+            <li><a href="redirectAfterDelay.html">Redirect After Delay</a></li>
+            <li><a href="redirectOnClick.html">Redirect After Delay</a></li>
         </ul>
     </body>
-
-    <script>
-        var url = "testoidc://callback?code=123";
-        var delay = 5000;
-
-        function spmeRedirect() {
-            console.log('spmeRedirect');
-            window.location = url;
-        }
-
-        function spmeDelayedRedirect() {
-            console.log('spmeDelayedRedirect');
-            document.getElementById("msg", "Waiting before redirect");
-            setTimeout(spmeRedirect, delay);
-        }
-
-        function googleRedirect() {
-            console.log('googleRedirect');
-            window.location = "https://www.google.com";
-        }
-
-        function googleDelayedRedirect() {
-            console.log('googleDelayedRedirect');
-            document.getElementById("msg", "Waiting before redirect");
-            setTimeout(googleRedirect, delay);
-        }
-
-        function appAuthRedirect() {
-            // https://ybiancheri.github.io/deeplink/index.html?state=xxx&session_state=yyy&code=zzz
-            // should generate redirect to testoidc://callback?state=xxx&session_state=yyy&code=zzz
-            window.location = "testoidc://callback" + window.location.search;
-        }
-        
-
-    </script>
 </html>
