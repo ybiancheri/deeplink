@@ -18,7 +18,7 @@
     </body>
 
     <script>
-        var delay = 5000;
+        var delay = 15000;
 
         function appAuthRedirect() {
             // https://ybiancheri.github.io/deeplink/index.html?state=xxx&session_state=yyy&code=zzz
@@ -28,7 +28,7 @@
         }
 
         window.onload = function() {
-            document.getElementById("msg").textContent = 'Redirection dans 5 secondes vers' + "testoidc://callback" + window.location.search;
+            document.getElementById("msg").textContent = 'Redirection dans 15 secondes vers' + "testoidc://callback" + window.location.search;
             setTimeout(appAuthRedirect, delay);
         }
 
